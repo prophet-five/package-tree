@@ -1,0 +1,15 @@
+package-tree
+|---out.txt
+|---package-tree.iml
++---.idea
+|   |---encodings.xml
+|   |---misc.xml
+|   |---modules.xml
+|   |---workspace.xml
++---out
+|   +---production
+|   |   +---package-tree
+|   |   |   |---MakeTree$1.class
+|   |   |   |---MakeTree.class
++---src
+|   |---MakeTree.java
