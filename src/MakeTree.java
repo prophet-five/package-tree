@@ -2,6 +2,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class MakeTree {
     /*-------=   DATA MEMBERS   =-------*/
@@ -59,6 +60,7 @@ public class MakeTree {
 
         for(File dir : folders)
             makeTree(dir,depth+1,writer);
+
     }
 
     /**
@@ -86,11 +88,16 @@ public class MakeTree {
      */
     public static void main(String[] args) {
         try {
-            if (args.length!=2)
-                throw new Exception();
+            Scanner reader = new Scanner(System.in);  // Reading from System.in
+            System.out.println("Enter a file name/path to write to: ");
+            String file = reader.next(); // Scans the next token of the input as an int.
+            System.out.println("Enter a directory path to map: ");
+            String sourceDir = reader.next(); // Scans the next token of the input as an int.
+            //once finished
+            reader.close();
             MakeTree treeMaker=new MakeTree();
-            File source=new File(args[1]);
-            BufferedWriter writer= new BufferedWriter(new FileWriter(args[0]));
+            File source=new File(sourceDir);
+            BufferedWriter writer= new BufferedWriter(new FileWriter(file));
             treeMaker.makeTree(source,0,writer);
             writer.close();
 
